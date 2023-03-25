@@ -128,13 +128,15 @@ keymap("v", "<C-s>s", ":wq<CR>", opts)
 keymap("i", "<C-s>", "<esc>:w<CR>i<right>", opts)
 
 
--- Comment in gnome-terminal (here / is represented by _)
--- vim.keymap.set('n', "<C-_>", "gcc", { remap = true})
--- vim.keymap.set("v", "<C-_>", "gc", { remap = true})
-
+-- Comment in gnome-terminal and tmux for some reason (here / is represented by _)
+if (os.getenv("TMUX")) then
+   vim.keymap.set('n', "<C-_>", "gcc", { remap = true})
+   vim.keymap.set("v", "<C-_>", "gc", { remap = true})
+else
 -- Comment in kitty (here / is represented by _)
-vim.keymap.set('n', "<C-/>", "gcc", { remap = true})
-vim.keymap.set("v", "<C-/>", "gc", { remap = true})
+   vim.keymap.set('n', "<C-/>", "gcc", { remap = true})
+   vim.keymap.set("v", "<C-/>", "gc", { remap = true})
+end
 
 
 -- Open help on word

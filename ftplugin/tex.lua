@@ -1,6 +1,6 @@
 require("user.ftutils.shared-md-tex")
 
-if packer_plugins["which-key.nvim"] and packer_plugins["which-key.nvim"].loaded then
+-- if packer_plugins["which-key.nvim"] and packer_plugins["which-key.nvim"].loaded then
 	local wk = require("which-key")
 	local opts = {
 		prefix = "",
@@ -16,4 +16,4 @@ if packer_plugins["which-key.nvim"] and packer_plugins["which-key.nvim"].loaded 
 	}
 
 	wk.register(mappings, opts)
-end
+-- end

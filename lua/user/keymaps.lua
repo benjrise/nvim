@@ -216,7 +216,7 @@ keymap("v", "J", "<C-d>zz", opts)
 keymap("v", "K", "<C-u>zz", opts)
 
 -- Telescope
-vim.keymap.set("i", "<A-s>", function()
+vim.keymap.set("i", "gs", function()
  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
     previewer = false,
      layout_config = {
@@ -226,7 +226,7 @@ vim.keymap.set("i", "<A-s>", function()
    })
  )
 end, opts)
-vim.keymap.set("n", "<A-s>", function()
+vim.keymap.set("n", "gs", function()
  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
     previewer = false,
      layout_config = {

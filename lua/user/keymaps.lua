@@ -118,8 +118,8 @@ keymap("n", "<S-u>", "<S-j>", opts)
 -- -- from cursor move rest of text to line aboce
 
 -- keymap("n", "<C-A-k>", "DO<Esc>p", opts)
-keymap("n", "oo", ":<C-u>call append(line('.'), repeat([''], v:count1))<CR>", opts)
-keymap("n", "OO", ":<C-u>call append(line('.')-1, repeat([''], v:count1))<CR>", opts)
+-- keymap("n", "oo", ":<C-u>call append(line('.'), repeat([''], v:count1))<CR>", opts)
+-- keymap("n", "OO", ":<C-u>call append(line('.')-1, repeat([''], v:count1))<CR>", opts)
 
 -- save file 
 keymap("n", "<C-s>", ":w<CR>", opts)
@@ -159,8 +159,8 @@ keymap("v", "p", '"_dP', opts)
 
 
 -- Center cursor
-keymap("n", "m", "zz", opts)
-keymap("v", "m", "zz", opts)
+-- keymap("n", "m", "zz", opts)
+-- keymap("v", "m", "zz", opts)
 
 
 -- Better window navigation

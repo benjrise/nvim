@@ -73,6 +73,10 @@ keymap("n", "<A-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-A-j>", ":split<CR>", opts)
 keymap("n", "<C-A-l>", ":vsplit<CR>", opts)
 
+-- swap _ and 0
+keymap("n", "_", "0", opts)
+keymap("n", "0", "_", opts)
+
 -- Unmappings 
 keymap("n", "<C-z>", "<nop>", opts)
 

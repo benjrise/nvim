@@ -82,6 +82,9 @@ keymap("n", "0", "_", opts)
 -- Unmappings 
 keymap("n", "<C-z>", "<nop>", opts)
 
+-- Path autocomplete
+keymap("i", "<C-f>", "<C-x><C-f>", opts)
+
 -- Replace highlighted text
 keymap ("v", "<S-r>", "y:%s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
 keymap ("v", "<C-r>", "y:s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})

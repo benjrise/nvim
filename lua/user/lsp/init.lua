@@ -45,4 +45,6 @@ require("lspconfig").pyright.setup {
    on_attach = on_attach,
 }
 
-
+require("lspconfig").texlab.setup {
+   on_attach = on_attach,
+}

@@ -79,6 +79,11 @@ keymap("v", "<C-S-c>", '"+y', opts)
 keymap("n", "_", "0", opts)
 keymap("n", "0", "_", opts)
 
+-- insert new line without leaving insert mode
+keymap("n", "<leader>o", "o<Esc>", opts)
+keymap("n", "<leader>O", "O<Esc>", opts)
+
+
 -- Unmappings 
 keymap("n", "<C-z>", "<nop>", opts)
 

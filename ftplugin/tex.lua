@@ -16,4 +16,6 @@ require("user.ftutils.shared-md-tex")
 	}
 
 	wk.register(mappings, opts)
+
+-- keyma("v", "<S-b>", ":'<,'>:norm 
 -- end

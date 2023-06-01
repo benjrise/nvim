@@ -77,7 +77,7 @@ local base_setup = {
       },
       -- Accept currently selected item. If none selected, `select` first item.
       -- Set `select` to `false` to only confirm explicitly selected items.
-      ["<Tab>"] = cmp.mapping(cmp.complete_common_string({ select = false }), {"c"}),
+      -- ["<Tab>"] = cmp.mapping(cmp.complete_common_string({ select = false }), {"c"}),
 
       ["<Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
@@ -95,6 +95,7 @@ local base_setup = {
          end
       end, {
             "i",
+            "c",
             "s",
          }),
 
@@ -206,25 +207,17 @@ cmp.setup.cmdline('/', {
 -- -- `:` cmdline setup.
 
 cmp.setup.cmdline(':', {
-   completion = {
-      keyword_length = 1,
-      -- completeopt = "menu,menuone,noinsert",
-      completeopt = "menu,noinsert,noselect",
-
-   },
-   cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-         { name = 'path' }
-      }, {
-            {
-               name = 'cmdline',
-               option = {
-                  ignore_cmds = { 'Man', '!' }
-               }
-            }
-         })
-   })
+-- mapping = cmp.mapping.preset.cmdline(),
+sources = cmp.config.sources({
+  { name = 'path'},
+  {name = 'buffer', keyword_length=3}
+   }, {
+  {
+    name = 'cmdline',
+    option = {
+      ignore_cmds = { 'Man', '!' }
+    }
+  }
 })
-
+})
 

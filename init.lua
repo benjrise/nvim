@@ -3,7 +3,6 @@ require "user.options"
 require "user.keymaps"
 require "user.plugins"
 
-
 -- Dashboard and appearance
 require "user.colorschemes"
 require "user.alpha"
@@ -31,8 +30,5 @@ require "user.vimtex"
 
 -- Markdown 
 require "user.markdown-preview"
--- vim.cmd [[lua package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/plugin/typing_game/?.lua']]
--- vim.cmd [[luafile ~/.config/nvim/plugin/typing_game/init.lua]]
--- vim.cmd [[command! TypingGame lua require("typing_game").start_typing_game()]]
 
 

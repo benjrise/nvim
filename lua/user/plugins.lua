@@ -100,6 +100,8 @@ return packer.startup(function(use)
    use "kdheepak/cmp-latex-symbols"
    use "jbyuki/nabla.nvim" -- show symbols in editor
 
+   use "vimwiki/vimwiki"
+
    -- Copilot
    -- use "github/copilot.vim"
    use { "zbirenbaum/copilot.lua" }

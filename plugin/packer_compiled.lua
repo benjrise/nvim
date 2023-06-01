@@ -227,6 +227,11 @@ _G.packer_plugins = {
     path = "/home/benjrise/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
   },
+  vimwiki = {
+    loaded = true,
+    path = "/home/benjrise/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/benjrise/.local/share/nvim/site/pack/packer/start/which-key.nvim",

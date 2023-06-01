@@ -67,26 +67,20 @@ local base_setup = {
    },
    -- Add {"i", "c" } to work in both command mode and insert mode
    mapping = {
-      ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"}),
       ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
+      ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"}),
       ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
       ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
       ["<C-e>"] = cmp.mapping {
          i = cmp.mapping.abort(),
          c = cmp.mapping.close(),
       },
-      -- Accept currently selected item. If none selected, `select` first item.
-      -- Set `select` to `false` to only confirm explicitly selected items.
-      -- ["<Tab>"] = cmp.mapping(cmp.complete_common_string({ select = false }), {"c"}),
-
       ["<Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
             cmp.confirm({ select = true })
          elseif luasnip.expandable() then
             luasnip.expand()
          elseif luasnip.expand_or_jumpable() then
-            -- Copilot dismiss
-            -- vim.cmd("<Plug>(copilot-dismiss)") 
             luasnip.expand_or_jump()
          elseif check_backspace() then
             fallback()
@@ -98,10 +92,7 @@ local base_setup = {
             "c",
             "s",
          }),
-
       ["<S-Tab>"] = cmp.mapping(function(fallback)
-         -- if cmp.visible() then
-         --   cmp.select_prev_item()
          if luasnip.jumpable(-1) then
             luasnip.jump(-1)
          else
@@ -119,7 +110,6 @@ local base_setup = {
       format = function(entry, vim_item)
          -- Kind icons
          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-
          vim_item.menu = ({
             omni = "[VimTex]",
             nvim_lsp = "[LSP]",
@@ -171,53 +161,24 @@ local base_setup = {
       }
    },
 }
-
 cmp.setup(base_setup)
--- local no_lsp_sources = cmp.config.sources({
---       { name = "luasnip" },
---       { name = "omni" },
---       { name = "buffer", keyword_length = 3 },
---       { name = "spell",
---          keyword_length = 5,
---          option = {
---             keep_all_entries = false,
---             enable_in_context = function()
---                return true
---             end
---          },
---       },
---       { name = "latex_symbols",
---          filetype = { "tex", "latex" },
---          option = { cache = true }, -- avoids reloading each time
---       },
---       { name = "path" },
---    })
---
---
--- local keymap = vim.api.nvim_set_keymap 
--- keymap("i", "<C-Space>", 
---    function () require("cmp").setup() end, 
--- )
 
 cmp.setup.cmdline('/', {
    sources = {
       {name = 'buffer'}
    }
 })
--- -- `:` cmdline setup.
 
 cmp.setup.cmdline(':', {
 -- mapping = cmp.mapping.preset.cmdline(),
-sources = cmp.config.sources({
-  { name = 'path'},
-  {name = 'buffer', keyword_length=3}
-   }, {
-  {
-    name = 'cmdline',
-    option = {
-      ignore_cmds = { 'Man', '!' }
-    }
-  }
-})
+   sources = cmp.config.sources({
+      {name = 'buffer', keyword_length=3},
+      {name = 'path'},
+      {
+       name = 'cmdline',
+       option = {
+         ignore_cmds = { 'Man', '!' }
+       }},
+   })
 })
 

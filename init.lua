@@ -31,4 +31,7 @@ require "user.vimtex"
 -- Markdown 
 require "user.markdown-preview"
 
+-- Leap
+-- require "user.leap"
+
 

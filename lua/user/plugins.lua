@@ -89,6 +89,7 @@ return packer.startup(function(use)
 
    -- Tree sitter
    use "nvim-treesitter/nvim-treesitter"
+   use "ggandor/leap.nvim"
 
    -- Dashboard and sessions
    use "goolord/alpha-nvim"

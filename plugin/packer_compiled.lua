@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/benjrise/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/benjrise/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = false,
     needs_bufread = false,

@@ -88,7 +88,7 @@ return packer.startup(function(use)
    use "folke/which-key.nvim"
 
    -- Tree sitter
-   use "nvim-treesitter/nvim-treesitter"
+   use {'nvim-treesitter/nvim-treesitter'} 
    use "ggandor/leap.nvim"
 
    -- Dashboard and sessions
@@ -101,7 +101,9 @@ return packer.startup(function(use)
    use "kdheepak/cmp-latex-symbols"
    use "jbyuki/nabla.nvim" -- show symbols in editor
 
-   use "vimwiki/vimwiki"
+   -- Obsidian
+   use ({"epwalsh/obsidian.nvim",
+        --[[ event={ "BufReadPre /home/benjrise/Data/Obsidian/ml-notes/**.md" } ]]})
 
    -- Copilot
    -- use "github/copilot.vim"

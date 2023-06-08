@@ -37,3 +37,5 @@ require "user.markdown-preview"
 -- Obsidian
 require "user.obsidian"
 
+-- ChatGPT
+require "user.chatgpt"

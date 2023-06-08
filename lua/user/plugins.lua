@@ -114,6 +114,15 @@ return packer.startup(function(use)
   
    -- Automatically set up your configuration after cloning packer.nvim
    -- Put this at the end after all plugins
+   use ({
+     "jackMort/ChatGPT.nvim",
+       requires = {
+         "MunifTanjim/nui.nvim",
+         "nvim-lua/plenary.nvim",
+         "nvim-telescope/telescope.nvim"
+       }
+   })
+
    if PACKER_BOOTSTRAP then
     require("packer").sync()
    end

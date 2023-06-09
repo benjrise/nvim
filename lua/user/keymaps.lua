@@ -215,17 +215,17 @@ keymap("n", "K", "<C-u>zz", opts)
 keymap("v", "J", "<C-d>zz", opts)
 keymap("v", "K", "<C-u>zz", opts)
 
--- Telescope
-vim.keymap.set("i", "gs", function()
- require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
-    previewer = false,
-     layout_config = {
-       width = 50,
-       height = 15,
-     }
-   })
- )
-end, opts)
+-- Insert mode speller turned off, as can be annoying in insert mode when typing args etc.
+-- vim.keymap.set("i", "gs", function()
+--  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
+--     previewer = false,
+--      layout_config = {
+--        width = 50,
+--        height = 15,
+--      }
+--    })
+--  )
+-- end, opts)
 
 vim.keymap.set("n", "gs", function()
  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({

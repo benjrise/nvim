@@ -30,7 +30,15 @@ require "user.vimtex"
 
 -- Markdown 
 require "user.markdown-preview"
+-- For chatgpt copy and paste, replaces deafult formatting. (Note e is required here, otherwise if there is
+-- no match the command stops running)
+vim.cmd[[:call setreg("c", ":%s/\\\\( /$/ge\n:%s/ \\\\)/$/ge\n:%s/\\\\(/$/ge\n:%s/\\\\)/$/ge\n:%s/\\\\\\[/$$/ge\n:%s/\\\\\\]/$$/ge\n")]]
 
+
+
+-- vim.cmd[[let @c=":%s/\\( /$/g\n:%s/ \\)/$/g\n"]]
+-- vim.cmd[[let @d=":%s/\\( /$/g<CR>:%s/ \\)/$/g<CR>"]]
+-- vim.cmd[[let @e=":norm :%s/\\( /$/g\\n:norm :%s/ \\)/g\\n"]]
 -- Leap
 -- require "user.leap"
 
@@ -39,3 +47,4 @@ require "user.markdown-preview"
 
 -- ChatGPT
 -- require "user.chatgpt"
+--

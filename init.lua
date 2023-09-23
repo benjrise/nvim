@@ -34,11 +34,6 @@ require "user.markdown-preview"
 -- no match the command stops running)
 vim.cmd[[:call setreg("c", ":%s/\\\\( /$/ge\n:%s/ \\\\)/$/ge\n:%s/\\\\(/$/ge\n:%s/\\\\)/$/ge\n:%s/\\\\\\[/$$/ge\n:%s/\\\\\\]/$$/ge\n")]]
 
-
-
--- vim.cmd[[let @c=":%s/\\( /$/g\n:%s/ \\)/$/g\n"]]
--- vim.cmd[[let @d=":%s/\\( /$/g<CR>:%s/ \\)/$/g<CR>"]]
--- vim.cmd[[let @e=":norm :%s/\\( /$/g\\n:norm :%s/ \\)/g\\n"]]
 -- Leap
 -- require "user.leap"
 

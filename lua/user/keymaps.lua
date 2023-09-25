@@ -70,6 +70,7 @@ keymap("n", "<A-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-A-j>", ":split<CR>", opts)
 keymap("n", "<C-A-l>", ":vsplit<CR>", opts)
 keymap("v", "<C-S-c>", '"+y', opts)
+keymap("n", "<C-r>", "<nop>", opts)
 
 -- swap _ and 0
 keymap("n", "_", "0", opts)
@@ -86,8 +87,8 @@ keymap("n", "<C-z>", "<nop>", opts)
 keymap("i", "<C-f>", "<C-x><C-f>", opts)
 
 -- Replace highlighted text
-keymap ("v", "<S-r>", "y:%s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
-keymap ("v", "<C-r>", "y:s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
+keymap ("v", "<S-r>", "y:s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
+keymap ("v", "<C-r>", "y:%s/<C-r>=GetVisual()<cr>//g<left><left>", {noremap = true})
 keymap ("v", "<A-r>", ":s///g<left><left><left>", {noremap = true})
 keymap("x", "@", ":<C-u>call ExecuteMacroOverVisualRange()<CR>", {noremap = true})
 -- Auto add current word to search bar, but don't move immediatly to next match

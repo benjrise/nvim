@@ -23,7 +23,7 @@ require "user.lsp"
 require "user.copilot"
 
 -- Luasnip
-require "user.luasnip"
+-- require "user.luasnip"
 
 -- Tex
 require "user.vimtex"

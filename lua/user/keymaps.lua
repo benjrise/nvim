@@ -71,7 +71,9 @@ keymap("n", "<C-A-j>", ":split<CR>", opts)
 keymap("n", "<C-A-l>", ":vsplit<CR>", opts)
 keymap("v", "<C-S-c>", '"+y', opts)
 keymap("n", "<C-r>", "<nop>", opts)
+keymap('n', '<space>1', '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>', opts)
 
+-- map <space>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
 -- swap _ and 0
 keymap("n", "_", "0", opts)
 keymap("n", "0", "_", opts)

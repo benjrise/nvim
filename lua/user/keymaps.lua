@@ -248,3 +248,7 @@ vim.keymap.set("n", "<C-p>", function ()
 end, { remap = true })
 
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Keep accidentially pressing these keys in insert mode
+keymap("i", "<Up>", "<nop>", opts)
+keymap("i", "<Down>", "<nop>", opts)
